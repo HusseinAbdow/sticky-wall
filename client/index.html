@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="loginScreen" class="login-screen">
+        <div class="login-card">
+            <h1 class="login-title">Welcome to Sticky Wall</h1>
+            <p class="login-subtitle">Enter a username to continue</p>
+            <input
+                type="text"
+                id="usernameInput"
+                class="login-input"
+                placeholder="Username"
+                maxlength="32"
+            >
+            <button id="enterAppBtn" class="login-btn">Enter App</button>
+        </div>
+    </div>
+
+    <div id="dashboardScreen" class="dashboard is-hidden">
+        <aside class="sidebar">
+            <h2 class="sidebar-title">Menu</h2>
+
+            <div class="search-wrap">
+                <input type="text" class="menu-search" placeholder="Search tasks..." aria-label="Search tasks">
+            </div>
+
+            <section class="menu-section">
+                <h3>Tasks</h3>
+                <ul class="menu-list">
+                    <li class="menu-item active" data-filter="all">All</li>
+                    <li class="menu-item" data-filter="completed">Completed</li>
+                    <li class="menu-item" data-filter="pending">Pending</li>
+                </ul>
+            </section>
+
+            <section class="profile-section">
+                <p class="profile-label">Profile</p>
+                <p id="profileName" class="profile-name">Guest</p>
+                <button id="leaveAppBtn" class="leave-btn" type="button">Leave App</button>
+            </section>
+        </aside>
+
+        <main class="main-content">
+            <h1>Sticky Wall</h1>
+
+            <div class="input-section">
+                <input
+                    type="text"
+                    id="taskInput"
+                    placeholder="Write a new sticky note..."
+                    class="task-input"
+                >
+                <button id="addBtn" class="add-btn">Add</button>
+            </div>
+
+            <ul id="taskList" class="task-list">
+                <!-- Tasks will be rendered as cards here -->
+            </ul>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
