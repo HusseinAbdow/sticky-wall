@@ -1,79 +1,142 @@
-# Todo Web Application
+# Sticky Wall
 
-A full-stack todo web application built with Node.js, Express, and Firebase.
+Sticky Wall is a simple full-stack todo web app built with Node.js, Express, and Firebase Firestore. It gives each user a clean, lightweight space to create, complete, and organize tasks with a sticky-note style dashboard.
+
+## UI Preview
+
+<table>
+  <tr>
+    <td align="center" width="50%">
+      <strong>Login</strong><br>
+      <img src="UI%20pics/login_page.png" alt="Login screen" width="100%">
+    </td>
+    <td align="center" width="50%">
+      <strong>Dashboard</strong><br>
+      <img src="UI%20pics/Dashboard.png" alt="Dashboard screen" width="100%">
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="50%">
+      <strong>Completed Tasks</strong><br>
+      <img src="UI%20pics/completed.png" alt="Completed tasks screen" width="100%">
+    </td>
+    <td align="center" width="50%">
+      <strong>Pending Tasks</strong><br>
+      <img src="UI%20pics/pending.png" alt="Pending tasks screen" width="100%">
+    </td>
+  </tr>
+</table>
+
+## What It Does
+
+- Username-based login stored in the browser with `localStorage`
+- Firestore-backed task storage
+- Add, complete/undo, and delete tasks
+- Sidebar filtering for All, Completed, and Pending tasks
+- Clean dashboard layout with a sticky wall style interface
+
+## Tech Stack
+
+- Frontend: HTML, CSS, Vanilla JavaScript
+- Backend: Node.js, Express
+- Database: Firebase Firestore
+- Utilities: CORS, dotenv, nodemon
 
 ## Project Structure
 
-```
+```text
 .
-├── client/                 # Frontend files
-│   ├── index.html         # Main HTML file
-│   ├── style.css          # Styling
-│   └── app.js             # Client-side JavaScript
-├── server/                # Backend files
-│   ├── server.js          # Express server entry point
-│   ├── firebase.js        # Firebase configuration
+├── client/
+│   ├── index.html
+│   ├── style.css
+│   └── app.js
+├── server/
+│   ├── server.js
+│   ├── firebase.js
 │   └── routes/
-│       └── tasks.js       # Task routes
-├── package.json           # Dependencies and scripts
-├── .env.example           # Example environment variables
-├── .gitignore             # Git ignore rules
-└── README.md              # This file
+│       └── tasks.js
+├── UI pics/
+│   ├── login_page.png
+│   ├── Dashboard.png
+│   ├── completed.png
+│   └── pending.png
+├── package.json
+├── package-lock.json
+├── .env.example
+├── .gitignore
+└── README.md
 ```
 
-## Installation
+## Getting Started
 
-1. Clone the repository:
+### Prerequisites
+
+- Node.js installed
+- A Firebase project with Firestore enabled
+- Firebase Admin credentials for local development
+
+### Installation
+
+1. Clone the repository.
+
 ```bash
-git clone <repository-url>
-cd ToDoApp
+git clone https://github.com/HusseinAbdow/sticky-wall.git
+cd sticky-wall
 ```
 
-2. Install dependencies:
+2. Install dependencies.
+
 ```bash
 npm install
 ```
 
-3. Set up environment variables:
+3. Create your local environment file.
+
 ```bash
 cp .env.example .env
-# Edit .env and add your Firebase credentials
 ```
 
-## Usage
+4. Open `.env` and add your Firebase credentials.
 
-### Development
-Run the server in development mode with hot reload:
+## Running the App
+
+### Development Mode
+
 ```bash
 npm run dev
 ```
 
-### Production
-Run the server:
+### Production Mode
+
 ```bash
 npm start
 ```
 
-The server will start on `http://localhost:3000`
-
-## Technologies
-
-- **Frontend**: HTML, CSS, JavaScript
-- **Backend**: Node.js, Express
-- **Database**: Firebase
-- **Additional Tools**: CORS, dotenv, nodemon
-
-## API Endpoints
-
-### Todo Tasks
-- `GET /api/tasks` - Get all tasks
-- `POST /api/tasks` - Create a new task
-- `PUT /api/tasks/:id` - Update a task
-- `DELETE /api/tasks/:id` - Delete a task
+The app runs at `http://localhost:3000`.
 
 ## Environment Variables
 
-See `.env.example` for required environment variables.
+The backend reads these values from `.env`:
+
+- `FIREBASE_PROJECT_ID`
+- `FIREBASE_PRIVATE_KEY`
+- `FIREBASE_CLIENT_EMAIL`
+- `PORT` (optional)
+
+See `.env.example` for the expected format.
+
+## API Endpoints
+
+- `GET /api/tasks?userId=...` - Get tasks for the current user
+- `POST /api/tasks` - Create a task
+- `PUT /api/tasks/:id` - Update a task
+- `DELETE /api/tasks/:id` - Delete a task
+
+## Notes
+
+- Login is frontend-only and stored in `localStorage`
+- Tasks are filtered per user through the backend `userId` query parameter
+- No Docker, Kubernetes, or CI/CD configuration is included in this repository
 
 ## License
 
