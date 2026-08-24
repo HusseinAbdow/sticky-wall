@@ -4,15 +4,15 @@ Sticky Wall is a simple full-stack todo web app built with Node.js, Express, and
 
 ## UI Preview
 
-### Demo Video
+### Demo
 
 <p align="center">
   <a href="UI%20pics/sticky-note-preview.mp4" target="_blank">
-    <img src="UI%20pics/demo-thumbnail.jpg" alt="Sticky Wall demo video - click to play" width="80%">
+    <img src="UI%20pics/demo-preview.gif" alt="Sticky Wall demo" width="80%">
   </a>
 </p>
 
-<p align="center"><em>Click the preview above to watch the full demo</em></p>
+<p align="center"><em>Auto-playing preview - click to watch the full-quality video</em></p>
 
 <br>
 
@@ -71,7 +71,7 @@ Sticky Wall is a simple full-stack todo web app built with Node.js, Express, and
 │       └── tasks.js
 ├── UI pics/
 │   ├── sticky-note-preview.mp4
-│   ├── demo-thumbnail.jpg
+│   ├── demo-preview.gif
 │   ├── login_page.png
 │   ├── Dashboard.png
 │   ├── completed.png
